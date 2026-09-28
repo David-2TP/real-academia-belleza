@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultar — La Real Academia De La Belleza</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@300;400;600;700&display=swap');
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+    font-family:'Nunito',sans-serif;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    background:
+        radial-gradient(circle at 80% 15%, rgba(201,162,39,.18) 0%, transparent 16%),
+        linear-gradient(135deg, rgb(224,25,122) 0%, #f0348e 45%, #f855a0 100%);
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:-150px; right:-150px;
+    width:500px; height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,39,.35) 0%, rgba(201,162,39,.15) 35%, transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-200px; left:-200px;
+    width:500px; height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(232,23,138,.15) 0%, transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+.header{
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    background: linear-gradient(160deg, rgba(210,30,110,0.55) 0%, rgba(26,10,16,0.45) 100%);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 0;
+}
+
+.logo{
+    width:110px; height:auto; object-fit:contain;
+    filter:drop-shadow(0 0 12px rgba(240,208,96,.45));
+    transition:.4s;
+}
+.logo:hover{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 20px rgba(240,208,96,.8));
+}
+
+.navbar ul{ display:flex; list-style:none; gap:35px; }
+.navbar a{
+    color:#fff; text-decoration:none;
+    font-weight:700; letter-spacing:1px;
+    text-transform:uppercase; transition:.3s;
+}
+.navbar a:hover{ color:#F0D060; }
+
+.main-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.eyebrow{
+    font-size:0.65rem;
+    font-weight:600;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:rgba(232,23,138,.6);
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.titulo-seccion{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,3.2rem);
+    color:#F0D060;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.programas-grid{
+    width:100%;
+    max-width:860px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.btn-link{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:1.5rem 1.4rem;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    text-decoration:none;
+    backdrop-filter:blur(10px);
+    transition:transform .3s, border-color .3s, box-shadow .3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-link::before{
+    content:"";
+    position:absolute;
+    top:0; left:-80px;
+    width:60px; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.06), transparent);
+    transform:skewX(-15deg);
+    transition:left .6s ease;
+    pointer-events:none;
+}
+.btn-link:hover::before{ left:300px; }
+
+.btn-link:hover{
+    transform:translateY(-5px);
+}
+
+.btn-link .icono{
+    width:44px; height:44px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.4rem;
+}
+
+.btn-link .nombre{
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#fff;
+}
+
+.btn-link .sub{
+    font-size:0.88rem;
+    font-weight:400;
+    line-height:1.6;
+    color:rgba(255,255,255,.75);
+}
+
+.btn-link .flecha{
+    font-size:0.85rem;
+    font-weight:700;
+    margin-top:6px;
+    transition:transform .25s, color .25s;
+    color:rgba(255,255,255,.5);
+}
+.btn-link:hover .flecha{ transform:translateX(4px); }
+
+.btn-link.c-lila{ border-color:rgba(196,174,207,.35); }
+.btn-link.c-lila:hover{ border-color:#C4AECF; box-shadow:0 12px 32px rgba(196,174,207,.25); }
+.btn-link.c-lila .icono{ background:rgba(196,174,207,.18); color:#C4AECF; }
+.btn-link.c-lila:hover .flecha{ color:#C4AECF; }
+
+.btn-link.c-dorado{ border-color:rgba(201,162,39,.35); }
+.btn-link.c-dorado:hover{ border-color:#C9A227; box-shadow:0 12px 32px rgba(201,162,39,.25); }
+.btn-link.c-dorado .icono{ background:rgba(201,162,39,.18); color:#F0D060; }
+.btn-link.c-dorado:hover .flecha{ color:#F0D060; }
+
+.btn-link.c-fucsia{ border-color:rgba(232,23,138,.35); }
+.btn-link.c-fucsia:hover{ border-color:#E8178A; box-shadow:0 12px 32px rgba(232,23,138,.25); }
+.btn-link.c-fucsia .icono{ background:rgba(232,23,138,.18); color:#E8178A; }
+.btn-link.c-fucsia:hover .flecha{ color:#E8178A; }
+
+.btn-link.c-menta{ border-color:rgba(93,202,165,.35); }
+.btn-link.c-menta:hover{ border-color:#5DCAA5; box-shadow:0 12px 32px rgba(93,202,165,.25); }
+.btn-link.c-menta .icono{ background:rgba(93,202,165,.18); color:#5DCAA5; }
+.btn-link.c-menta:hover .flecha{ color:#5DCAA5; }
+
+@media(max-width:768px){
+    .navbar{ flex-direction:column; gap:20px; }
+    .navbar ul{ flex-wrap:wrap; justify-content:center; gap:20px; }
+    .programas-grid{ grid-template-columns:1fr; }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{ transition:none !important; animation:none !important; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="imagenes/Logo-Academia.png" class="logo" alt="Logo La Real Academia De La Belleza">
+        </a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Academia_Belleza_Organizado2.pdf">Tecnólogo</a></li>
+            <li><a href="Quienes somos.html">Quiénes Somos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+
+    <p class="eyebrow">La Real Academia De La Belleza</p>
+    <h1 class="titulo-seccion">Nuestros Programas</h1>
+
+    <div class="programas-grid">
+
+        <a href="manicure&pedicure.html" class="btn-link c-lila">
+            <div class="icono">✦</div>
+            <span class="nombre">Manicure & Pedicure</span>
+            <span class="sub">Diseño y cuidado profesional de uñas</span>
+            <span class="flecha">Conocer más →</span>
+        </a>
+
+        <a href="Barbería.html" class="btn-link c-dorado">
+            <div class="icono">✂</div>
+            <span class="nombre">Barbería</span>
+            <span class="sub">Cortes, fades y diseño de barba</span>
+            <span class="flecha">Conocer más →</span>
+        </a>
+
+        <a href="Peluquería.html" class="btn-link c-fucsia">
+            <div class="icono">◈</div>
+            <span class="nombre">Peluquería</span>
+            <span class="sub">Color, corte y tendencias capilares</span>
+            <span class="flecha">Conocer más →</span>
+        </a>
+
+        <a href="Maquillajeprofesional.html" class="btn-link c-menta">
+            <div class="icono">❋</div>
+            <span class="nombre">Maquillaje Profesional</span>
+            <span class="sub">Arte, eventos y producciones</span>
+            <span class="flecha">Conocer más →</span>
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>

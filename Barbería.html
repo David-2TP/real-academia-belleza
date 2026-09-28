@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbería Profesional | La Real Academia De La Belleza</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+    font-family:'Nunito',sans-serif;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+
+        background:
+        radial-gradient(circle at 80% 15%, rgba(201,162,39,.18) 0%, transparent 16%),
+        linear-gradient(135deg, rgb(224,25,122) 0%, #f0348e 45%, #f855a0 100%);
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:-150px;
+    right:-150px;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(201,162,39,.35) 0%,
+        rgba(201,162,39,.15) 35%,
+        transparent 70%
+    );
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-200px;
+    left:-200px;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(232,23,138,.15) 0%,
+        transparent 70%
+    );
+    pointer-events:none;
+    z-index:-1;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.header{ width:100%; }
+
+.navbar{
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    background: linear-gradient(160deg, rgba(210,30,110,0.55) 0%, rgba(26,10,16,0.45) 100%);
+    backdrop-filter:blur(10px);
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 0;
+}
+
+.logo{
+    width:110px;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0 0 12px rgba(240,208,96,.45));
+    transition:.4s;
+}
+
+.logo:hover{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 20px rgba(240,208,96,.8));
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.navbar a:hover{ color:#F0D060; }
+
+.main{
+    width:90%;
+    max-width:1200px;
+    margin:60px auto;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.2rem,5vw,55px);
+    color:#F0D060;
+    margin-bottom:25px;
+}
+
+h3{
+    font-weight:300;
+    font-size:1.05rem;
+    line-height:1.9;
+    max-width:900px;
+    color:rgba(255,255,255,.88);
+    margin-bottom:50px;
+    padding-left:1.2rem;
+    border-left:2px solid rgba(232,23,138,.5);
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin-bottom:60px;
+}
+
+.card{
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.02)
+    );
+    border:1px solid rgba(240,208,96,.25);
+    border-radius:16px;
+    padding:24px;
+    backdrop-filter:blur(8px);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#F0D060;
+    box-shadow:0 12px 35px rgba(240,208,96,.18);
+}
+
+.card h4{
+    color:#F0D060;
+    margin-bottom:10px;
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:0.5px;
+}
+
+.card p{
+    color:rgba(255,255,255,.82);
+    line-height:1.65;
+    font-size:0.92rem;
+}
+
+.referencias{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.2rem;
+    padding:0 0 4rem;
+}
+
+.img-1{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:16px;
+    border:2px solid rgba(232,23,138,.25);
+    box-shadow:0 4px 20px rgba(232,23,138,.15);
+    transition:transform .35s, box-shadow .35s, border-color .35s;
+    display:block;
+}
+
+.img-1:hover{
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 12px 40px rgba(232,23,138,.45), 0 0 0 2px #E8178A;
+    border-color:#E8178A;
+}
+
+@media(max-width:768px){
+    .menu{
+        flex-direction:column;
+        gap:20px;
+    }
+    .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+    h1{ font-size:2.2rem; }
+    .skills{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        transition:none !important;
+        animation:none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <div class="menu container">
+            <a href="index.html">
+                <img src="imagenes/Logo-Academia.png" class="logo" alt="Logo La Real Academia De La Belleza">
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Academia_Belleza_Organizado2.pdf">Tecnólogo</a></li>
+                <li><a href="Quienes somos.html">Quiénes Somos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main">
+
+    <h1>Tecnólogo en Barbería Profesional</h1>
+
+    <h3>
+        La barbería moderna va mucho más allá de realizar cortes de cabello. Este programa está diseñado para formar profesionales capaces de resaltar la imagen personal de cada cliente mediante técnicas actualizadas, tendencias del mercado y el uso adecuado de herramientas profesionales.
+        Durante la formación, los estudiantes desarrollarán habilidades prácticas y conocimientos técnicos que les permitirán desempeñarse en barberías, salones de belleza o emprender su propio negocio.
+    </h3>
+
+    <div class="skills">
+        <div class="card">
+            <h4>Cortes Masculinos</h4>
+            <p>Técnicas de corte clásico y moderno adaptadas a diferentes estilos y tendencias.</p>
+        </div>
+        <div class="card">
+            <h4>Fade Profesional</h4>
+            <p>Aprendizaje de degradados profesionales y estilos urbanos de alta demanda.</p>
+        </div>
+        <div class="card">
+            <h4>Barba y Bigote</h4>
+            <p>Diseño, perfilado y mantenimiento profesional de barba y bigote.</p>
+        </div>
+        <div class="card">
+            <h4>Visajismo</h4>
+            <p>Análisis facial para recomendar cortes y estilos según cada cliente.</p>
+        </div>
+        <div class="card">
+            <h4>Herramientas</h4>
+            <p>Manejo adecuado de máquina, tijeras, navaja y accesorios profesionales.</p>
+        </div>
+        <div class="card">
+            <h4>Bioseguridad</h4>
+            <p>Protocolos de higiene, esterilización y atención al cliente.</p>
+        </div>
+        <div class="card">
+            <h4>Productos</h4>
+            <p>Uso correcto de productos capilares y de cuidado para barba.</p>
+        </div>
+        <div class="card">
+            <h4>Emprendimiento</h4>
+            <p>Orientación para trabajar en barberías o crear tu propio negocio.</p>
+        </div>
+    </div>
+
+    <div class="referencias">
+        <img class="img-1" src="imagenes/barberia1.jpg" alt="Barbería">
+        <img class="img-1" src="imagenes/barberia2.jpg" alt="Barbería">
+        <img class="img-1" src="imagenes/barberia3.jpg" alt="Peluquería">
+        <img class="img-1" src="imagenes/barberia4.jpg" alt="Peluquería">
+    </div>
+
+</main>
+
+</body>
+</html>

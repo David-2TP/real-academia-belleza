@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiénes Somos | La Real Academia De La Belleza</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@300;400;600;700&display=swap');
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 80% 15%, rgba(201,162,39,.18) 0%, transparent 16%),
+        linear-gradient(135deg, rgb(224,25,122) 0%, #f0348e 45%, #f855a0 100%);
+}
+
+.container{ width:90%; max-width:1200px; margin:auto; }
+
+.header{
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    background:
+        linear-gradient(160deg, rgba(210,30,110,0.55) 0%, rgba(26,10,16,0.45) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar{ padding:15px 0; }
+
+.menu{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    width: 170px;
+    height: auto;
+    display: block;
+    filter:
+        drop-shadow(0 0 10px rgba(232,23,138,.5))
+        drop-shadow(0 0 25px rgba(253,129,197,0.3));
+    transition: .3s;
+}
+.logo:hover{ transform: scale(1.05); }
+
+.navbar ul{ display:flex; gap:35px; list-style:none; }
+.navbar a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+.navbar a:hover{ color:#F0D060; }
+
+h1{
+    width:85%;
+    max-width:1000px;
+    margin:60px auto 40px;
+    padding:25px;
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,5vw,55px);
+    color:#f0d060;
+    background:
+        linear-gradient(160deg, rgba(210,30,110,0.35) 0%, rgba(26,10,16,0.30) 100%);
+    border:2px solid rgba(232,23,138,.4);
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(232,23,138,.15);
+}
+
+h2{
+    width:85%;
+    max-width:1000px;
+    margin:35px auto 0;
+    padding:18px;
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    color:#f0d060;
+    background:
+        linear-gradient(160deg, rgba(210,30,110,0.40) 0%, rgba(26,10,16,0.25) 100%);
+    border-radius:15px 15px 0 0;
+    border:1px solid rgba(232,23,138,.3);
+}
+
+h4{
+    width:85%;
+    max-width:1000px;
+    margin:0 auto;
+    padding:25px;
+    background:
+        linear-gradient(160deg, rgba(210,30,110,0.25) 0%, rgba(26,10,16,0.20) 100%);
+    border-left:1px solid rgba(232,23,138,.3);
+    border-right:1px solid rgba(232,23,138,.3);
+    border-bottom:1px solid rgba(232,23,138,.3);
+    border-radius:0 0 15px 15px;
+    line-height:1.8;
+    font-size:18px;
+    font-weight:400;
+    text-align:justify;
+    color:rgba(255,255,255,.95);
+    box-shadow:0 8px 25px rgba(0,0,0,.20);
+}
+
+.imagen-quienes{
+    text-align:center;
+    margin:40px 0 60px;
+}
+
+.imagen-quienes img{
+    width:450px;
+    max-width:90%;
+    border-radius:20px;
+    display:block;
+    margin:auto;
+    box-shadow:0 0 25px rgba(232,23,138,0.35);
+    border:1px solid rgba(232,23,138,0.3);
+}
+
+@media(max-width:768px){
+    .menu{ flex-direction:column; gap:20px; }
+    .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+    h1{ font-size:2rem; }
+    h2{ font-size:1.5rem; }
+    h4{ width:90%; font-size:16px; }
+    .logo{ width:120px; }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{ transition:none !important; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <div class="menu container">
+            <a href="index.html">
+                <img src="imagenes/Logo-Academia.png" alt="Logo Academia" class="logo">
+            </a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Academia_Belleza_Organizado2.pdf">Tecnólogo</a></li>
+                <li><a href="Quienes somos.html">Quiénes Somos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<h1>¿Quiénes Somos?</h1>
+<h4>
+La Real Academia de la Belleza es una institución dedicada a la formación de profesionales en el área de la estética y el cuidado personal. Ofrecemos capacitación en corte, colorimetría, maquillaje, peinados, manicure, pedicure, cosmetología facial y tratamientos capilares.
+
+Nuestro compromiso es brindar educación de calidad, combinando teoría y práctica para desarrollar el talento, la creatividad y las habilidades de nuestros estudiantes, preparándolos para destacar en el mundo de la belleza.
+</h4>
+
+<h2>Nuestra Misión</h2>
+<h4>
+Formar profesionales altamente capacitados en las diferentes áreas de la belleza y la estética, brindando conocimientos técnicos, prácticos y éticos que contribuyan al crecimiento personal y laboral de nuestros estudiantes.
+</h4>
+
+<h2>Nuestra Visión</h2>
+<h4>
+Ser una academia reconocida en Villavicencio y Acacias por la calidad de nuestra formación en belleza y estética, contribuyendo al desarrollo profesional de nuestros estudiantes mediante una enseñanza práctica, actualizada y orientada al mundo laboral.
+</h4>
+
+<div class="imagen-quienes">
+    <img src="imagenes/corte.jpg" alt="Real Academia de la Belleza">
+</div>
+
+</body>
+</html>
