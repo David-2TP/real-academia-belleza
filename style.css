@@ -6,13 +6,17 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Nunito', sans-serif;
   background: linear-gradient(135deg, rgb(224, 25, 122) 0%, #f0348e 45%, #f855a0 100%);
   color: #fff;
   min-height: 100vh;
+  min-height: 100svh;
   overflow-x: hidden;
 }
 
@@ -25,8 +29,10 @@ body {
 .header {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .header::before {
@@ -45,7 +51,7 @@ body {
   width: 170px;
   height: 170px;
   flex-shrink: 0;
-  background-image: url('imagenes/Logo-Academia.png');
+  background-image: url('imagenes/Logo Academia.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -121,7 +127,7 @@ body {
   transform: translateY(-50%);
   width: 700px;
   height: 700px;
-  background-image: url('imagenes/Logo-Academia.png');
+  background-image: url('imagenes/Logo Academia.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -456,6 +462,8 @@ a[href="consultar.html"],
 }
 
 @media (max-width: 768px) {
+  /* Sin botón de hamburguesa: igual que en contacto.html y Quienes somos.html,
+     el menú simplemente se envuelve (wrap) y queda centrado, siempre visible */
   .navbar .menu {
     flex-wrap: wrap;
     justify-content: center;
