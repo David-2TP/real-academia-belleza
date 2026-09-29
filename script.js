@@ -5,15 +5,15 @@ if (!video) {
 } else {
 
     const videos = [
-        "videos/Video1.mp4",
-        "videos/Video2.mp4",
-        "videos/Video3.mp4",
-        "videos/Video4.mp4",
-        "videos/Video5.mp4",
-        "videos/Video6.mp4",    
-        "videos/Video7.mp4",
-        "videos/Video8.mp4",
-        "videos/Video9.mp4"
+        "Videos/Video1.mp4",
+        "Videos/Video2.mp4",
+        "Videos/Video3.mp4",
+        "Videos/Video4.mp4",
+        "Videos/Video5.mp4",
+        "Videos/Video6.mp4",    
+        "Videos/Video7.mp4",
+        "Videos/Video8.mp4",
+        "Videos/Video9.mp4"
     ];
 
     let indice = 0;
