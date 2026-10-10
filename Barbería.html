@@ -15,12 +15,13 @@
     box-sizing:border-box;
 }
 
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; }
 
 body{
     font-family:'Nunito',sans-serif;
     color:#fff;
     min-height:100vh;
+    min-height:100svh;
     overflow-x:hidden;
     position:relative;
 
@@ -31,7 +32,7 @@ body{
 
 body::before{
     content:"";
-    position:fixed;
+    position:absolute;
     top:-150px;
     right:-150px;
     width:500px;
@@ -44,12 +45,12 @@ body::before{
         transparent 70%
     );
     pointer-events:none;
-    z-index:-1;
+    z-index:0;
 }
 
 body::after{
     content:"";
-    position:fixed;
+    position:absolute;
     bottom:-200px;
     left:-200px;
     width:500px;
@@ -61,7 +62,7 @@ body::after{
         transparent 70%
     );
     pointer-events:none;
-    z-index:-1;
+    z-index:0;
 }
 
 .container{
@@ -70,12 +71,13 @@ body::after{
     margin:auto;
 }
 
-.header{ width:100%; }
+.header{ width:100%; position:relative; z-index:1; }
 
 .navbar{
     width:100%;
     border-bottom:1px solid rgba(255,255,255,.15);
     background: linear-gradient(160deg, rgba(210,30,110,0.55) 0%, rgba(26,10,16,0.45) 100%);
+    -webkit-backdrop-filter:blur(10px);
     backdrop-filter:blur(10px);
 }
 
@@ -120,6 +122,8 @@ body::after{
     width:90%;
     max-width:1200px;
     margin:60px auto;
+    position:relative;
+    z-index:1;
 }
 
 h1{
@@ -156,6 +160,7 @@ h3{
     border:1px solid rgba(240,208,96,.25);
     border-radius:16px;
     padding:24px;
+    -webkit-backdrop-filter:blur(8px);
     backdrop-filter:blur(8px);
     transition:.35s;
 }
@@ -240,7 +245,7 @@ h3{
             </a>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="Academia_Belleza_Organizado2.pdf">Tecnólogo</a></li>
+                <li><a href="Academia_Belleza.pdf">Tecnólogo</a></li>
                 <li><a href="Quienes somos.html">Quiénes Somos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>

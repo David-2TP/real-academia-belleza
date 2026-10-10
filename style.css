@@ -196,7 +196,7 @@ body {
 }
 
 .header-info::before {
-  content: '✦ La Real Academia De La Belleza ✦';
+  content: '✦ La Real Academia De Belleza ✦';
   display: block;
   font-size: 0.65rem;
   font-weight: 600;
