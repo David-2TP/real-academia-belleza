@@ -5,6 +5,8 @@ if (!video) {
 } else {
 
     const videos = [
+        "Videos/Video0.mp4",
+        "Videos/Video0.5.mp4",
         "Videos/Video1.mp4",
         "Videos/Video2.mp4",
         "Videos/Video3.mp4",
